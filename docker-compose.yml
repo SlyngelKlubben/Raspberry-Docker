@@ -18,6 +18,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./volumes/web/code:/code
+    ports:
+      - "9001:9000"
 
   postgres:
     container_name: postgres
@@ -144,7 +146,7 @@ services:
     image: carldebilly/zigbee2mqttassistant
     restart: unless-stopped
     ports:
-    - "8880:80"
+    - "8880:88"
     environment:
     - VIRTUAL_HOST=~^zigbee2mqtt_assistant\..*\.xip\.io
     - Z2MA_SETTINGS__MQTTSERVER=mosquitto
