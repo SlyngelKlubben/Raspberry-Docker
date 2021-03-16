@@ -5,6 +5,6 @@ curl -fsSL https://raw.githubusercontent.com/SensorsIot/IOTstack/master/install.
 cp -f ./docker-compose.yml ./IOTstack
 cp ./services ./IOTstack
 cp ./volumes ./IOTstack
-git clone https://github.com/prest/prest.git ./IOTstack/volumes
+git clone https://github.com/prest/prest.git ./IOTstack/volumes/prest
 cp -f ./Dockerfile ./IOTstack/volumes/prest
 echo "Reboot to make this work properly"
