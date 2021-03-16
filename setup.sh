@@ -1,6 +1,10 @@
+sudo apt-get install git -y
+git clone https://github.com/SlyngelKlubben/Raspberry-Docker.git
+cd ./Raspberry-Docker
 curl -fsSL https://raw.githubusercontent.com/SensorsIot/IOTstack/master/install.sh | bash
-mv -f ./docker-compose.yml ./IOTstack
-mv ./services ./IOTstack
-mv ./volumes ./IOTstack
-git clone git@github.com:prest/prest.git ./IOTstack/volumes
-mv -f ./Dockerfile ./IOTstack/volumes/prest
+cp -f ./docker-compose.yml ./IOTstack
+cp ./services ./IOTstack
+cp ./volumes ./IOTstack
+git clone https://github.com/prest/prest.git ./IOTstack/volumes
+cp -f ./Dockerfile ./IOTstack/volumes/prest
+echo "Reboot to make this work properly"
