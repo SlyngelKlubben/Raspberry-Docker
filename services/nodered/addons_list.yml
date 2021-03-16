@@ -1,0 +1,18 @@
+version: '1'
+application: IOTstack
+service: nodered
+comment: Selected addons
+dockerFileInstallCommand: "RUN cd /usr/src/node-red && npm install --save "
+addons:
+- "node-red-contrib-home-assistant-websocket"
+- "node-red-node-rbe"
+- "node-red-node-pi-gpiod"
+- "node-red-node-openweathermap"
+- "node-red-node-email"
+- "node-red-dashboard"
+- "node-red-contrib-zigbee2mqtt"
+- "node-red-contrib-influxdb"
+- "node-red-contrib-boolean-logic"
+- "node-red-contrib-blynk-ws"
+- "node-red-configurable-ping"
+
