@@ -9,5 +9,5 @@ $ curl -fsSL https://raw.githubusercontent.com/SlyngelKlubben/Raspberry-Docker/m
 ```
 $ cd ~/Raspberry-Docker/IOTstack && bash ./menu.sh
 ```
-4. IF it's ask arbout **Project update** select **no**
+4. If it's ask arbout **Project update** select **no**
 5. Select **Docker Commands** and then **Start stack**
