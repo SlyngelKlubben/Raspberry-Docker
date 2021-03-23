@@ -5,7 +5,7 @@ services:
     image: nginx
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - "21451:80"
     volumes:
       - ./volumes/web/code:/code
       - ./volumes/web/conf:/etc/nginx/conf.d
@@ -44,7 +44,7 @@ services:
       - "postgres:postgres"
     environment:
       - PREST_DEBUG=true # remove comment for enable DEBUG mode (disable JWT)
-      - PREST_PG_HOST=192.168.0.183
+      # - PREST_PG_HOST=192.168.0.183
       - PREST_PG_USER=iot
       - PREST_PG_PASS=iot
       - PREST_PG_DATABASE=hus
