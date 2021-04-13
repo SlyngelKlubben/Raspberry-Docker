@@ -61,7 +61,7 @@ services:
     restart: unless-stopped
     user: "0"
     ports:
-    - "3001:3001"
+    - "3001:3000"
     environment:
     - GF_PATHS_DATA=/var/lib/grafana
     - GF_PATHS_LOGS=/var/log/grafana
