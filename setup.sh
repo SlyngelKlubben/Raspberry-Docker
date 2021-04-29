@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get install git -y
 git clone https://github.com/SlyngelKlubben/Raspberry-Docker.git
 cd ./Raspberry-Docker
