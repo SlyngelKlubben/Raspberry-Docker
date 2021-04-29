@@ -28,11 +28,11 @@ services:
     volumes:
       - "./volumes/postgres/data:/var/lib/postgresql/data"
     environment:
-      - POSTGRES_USER=iot
-      - POSTGRES_DB=hus
-      - POSTGRES_PASSWORD=iot
+      - POSTGRES_USER={pg_user}
+      - POSTGRES_DB={pg_db}
+      - POSTGRES_PASSWORD={pg_pass}
     ports:
-      - "5432:5432"
+      - "{pg_port}:5432"
     networks:
       - iotstack_nw
 
@@ -44,16 +44,29 @@ services:
       - "postgres:postgres"
     environment:
       - PREST_DEBUG=true # remove comment for enable DEBUG mode (disable JWT)
-      - PREST_PG_HOST=
-      - PREST_PG_USER=iot
-      - PREST_PG_PASS=iot
-      - PREST_PG_DATABASE=hus
-      - PREST_PG_PORT=5432
+      - PREST_PG_HOST={pg_host}
+      - PREST_PG_USER={pg_user}
+      - PREST_PG_PASS={pg_pass}
+      - PREST_PG_DATABASE={pg_db}
+      - PREST_PG_PORT={pg_port}
       - PREST_JWT_DEFAULT=false # remove if need jwt
     depends_on:
       - postgres
     ports:
       - "3000:3000"
+
+  node:
+    container_name: node
+    image: "node:15"
+    restart: unless-stopped
+    user: "node"
+    working_dir: /home/node/app
+    expose:
+      - "8080"
+    ports:
+      - "7070:8080"
+    command: "node ./services/node/index.js"
+    
   
   grafana:
     container_name: grafana
