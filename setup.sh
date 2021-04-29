@@ -3,7 +3,7 @@ sudo apt-get install git -y
 git clone https://github.com/SlyngelKlubben/Raspberry-Docker.git
 cd ./Raspberry-Docker
 curl -fsSL https://raw.githubusercontent.com/SlyngelKlubben/Raspberry-Docker/master/docker-compose.yml | cat > docker-compose.yml
-curl -fsSL https://raw.githubusercontent.com/SensorsIot/IOTstack/master/install.sh | bash | sleep 5
+curl -fsSL https://raw.githubusercontent.com/SensorsIot/IOTstack/master/install.sh | bash
 
 yml_file="docker-compose.yml"
 
