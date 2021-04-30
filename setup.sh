@@ -1,4 +1,10 @@
 #!/bin/bash
+pg_host=""
+pg_port=""
+pg_user=""
+pg_pass=""
+pg_db=""
+
 sudo apt-get install git -y
 git clone https://github.com/SlyngelKlubben/Raspberry-Docker.git
 cd ./Raspberry-Docker
@@ -6,12 +12,6 @@ curl -fsSL https://raw.githubusercontent.com/SlyngelKlubben/Raspberry-Docker/mas
 curl -fsSL https://raw.githubusercontent.com/SensorsIot/IOTstack/master/install.sh | bash
 
 yml_file="docker-compose.yml"
-
-read -p "pg_host: " pg_host
-read -p "pg_port: " pg_port
-read -p "pg_user: " pg_user
-read -p "pg_pass: " pg_pass
-read -p "pg_db: " pg_db
 
 echo "[{\"user\":\"$pg_user\",\"password\":\"$pg_pass\",\"host\":\"$pg_host\",\"port\":\"$pg_port\",\"database\":\"$pg_db\"}]" > ./services/node/pg_info.json
 
