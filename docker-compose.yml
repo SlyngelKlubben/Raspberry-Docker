@@ -57,15 +57,13 @@ services:
 
   node:
     container_name: node
-    image: "node:15"
+    build: ./services/node
     restart: unless-stopped
     user: "node"
-    working_dir: /home/node/app
     expose:
       - "8080"
     ports:
       - "7070:8080"
-    command: "node ./services/node/index.js"
     
   
   grafana:
