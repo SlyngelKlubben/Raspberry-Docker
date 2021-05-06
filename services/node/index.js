@@ -4,7 +4,11 @@ const fs = require('fs');
 const log = require('./console-log');
 const db_temp = require("./db_temp");
 const db_pw = require('./db_PW')
+var dir = './public/data';
 
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 db_temp.connect() // Connects to database
 db_pw.connect()
