@@ -13,7 +13,7 @@ curl -fsSL https://raw.githubusercontent.com/SensorsIot/IOTstack/master/install.
 
 yml_file="docker-compose.yml"
 
-echo "[{\"user\":\"$pg_user\",\"password\":\"$pg_pass\",\"host\":\"$pg_host\",\"port\":\"$pg_port\",\"database\":\"$pg_db\"}]" > ./services/node/pg_info.json
+echo "{\"user\":\"$pg_user\",\"password\":\"$pg_pass\",\"host\":\"$pg_host\",\"port\":\"$pg_port\",\"database\":\"$pg_db\"}" > ./services/node/pg_info.json
 
 sed -i "s/{pg_host}/$pg_host/g" $yml_file
 sed -i "s/{pg_port}/$pg_port/g" $yml_file
