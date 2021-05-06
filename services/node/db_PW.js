@@ -6,14 +6,14 @@ var saveFile = './public/data/data_PW.json'
 let db_info_file = fs.readFileSync('./pg_info.json');
 
 
-//var db_info=JSON.parse(db_info_file);
-const db_info = {
+var db_info=JSON.parse(db_info_file);
+/*const db_info = {
 	user: "iot",
 	password: "iot",
 	host: "192.168.0.200",
 	port: 5432,
 	database: "hus"
-}
+}*/
 
 const pool = new Pool(db_info);
 exports.connect = function(){
