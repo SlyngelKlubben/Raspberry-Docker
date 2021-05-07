@@ -19,7 +19,7 @@ function compare(a, b) {
 	// Use toUpperCase() to ignore character casing
 	const macA = a.mac.toUpperCase();
 	const macB = b.mac.toUpperCase();
-  
+
 	let comparison = 0;
 	if (macA > macB) {
 	  comparison = 1;
