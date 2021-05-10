@@ -32,7 +32,7 @@ function time(arr) {
       maxTime = time[index];
     };
   });
-  var date = new Date(maxTime).toLocaleString()
+  var date = new Date(maxTime).toLocaleString();
   document.getElementById("time").innerHTML = date;
 }
 function temp(arr){
@@ -41,7 +41,7 @@ function temp(arr){
   color.length
   var out = '';
   for (let index = 0; index < arr.length; index++) {
-    console.log(index+": "+arr[index]["temp"])
+    //console.log(index+": "+arr[index]["temp"])
     if (arr[index]["temp"] == null) {
       var date = new Date(arr[index]["timestamp"]).toLocaleString()
       out = out+'<div class="boxT"style="background-color:'+color_null+';"><div class="TNM"><div class="test"><p>'+date+'</p></div><h2 class="center" id="white">'+JSON.stringify(arr[index]["name"]).replace(/"/g,'')+'</h2><div class="test" id="right"><p>'+JSON.stringify(arr[index]["mac"]).replace(/"/g,'')+'</p></div></div><div class="TNM"><div class="test" id="white"><p>'+JSON.stringify(arr[index]["humidity"]).replace(/"/g,'')+'</p><p>% RH</p></div><div class="center" id="white"><span>'+JSON.stringify(arr[index]["temp"]).replace(/"/g,'')+'</span><h1>°C</h1></div><div class="test" id="right"></div></div></div>'
@@ -49,20 +49,6 @@ function temp(arr){
       var date = new Date(arr[index]["timestamp"]).toLocaleString()
       out = out+'<div class="boxT"style="background-color:'+color[Math.round(arr[index]["temp"])+10]+';"><div class="TNM"><div class="test"><p>'+date+'</p></div><h2 class="center" id="white">'+JSON.stringify(arr[index]["name"]).replace(/"/g,'')+'</h2><div class="test" id="right"><p>'+JSON.stringify(arr[index]["mac"]).replace(/"/g,'')+'</p></div></div><div class="TNM"><div class="test" id="white"><p>'+JSON.stringify(arr[index]["humidity"]).replace(/"/g,'')+'</p><p>% RH</p></div><div class="center" id="white"><span>'+JSON.stringify(arr[index]["temp"]).replace(/"/g,'')+'</span><h1>°C</h1></div><div class="test" id="right"></div></div></div>'
     }
-    //var date = new Date(arr[index]["timestamp"]).toLocaleString()
-    //out = out+'<div class="boxT"style="background-color:'+color[Math.round(arr[index]["temp"])+10]+';"><div class="TNM"><div class="test"><p>'+date+'</p></div><h2 class="center" id="white">'+JSON.stringify(arr[index]["name"]).replace(/"/g,'')+'</h2><div class="test" id="right"><p>'+JSON.stringify(arr[index]["mac"]).replace(/"/g,'')+'</p></div></div><div class="TNM"><div class="test" id="white"><p>'+JSON.stringify(arr[index]["humidity"]).replace(/"/g,'')+'</p><p>% RH</p></div><div class="center" id="white"><span>'+JSON.stringify(arr[index]["temp"]).replace(/"/g,'')+'</span><h1>°C</h1></div><div class="test" id="right"></div></div></div>'
-    //out = out+'<div class="boxT" style="background-color:'+color[Math.round(arr[index]["temp"])+10]+';"><div class="TNM"><div class="test"><p>'+date+'</p></div><h2 id="white">'+JSON.stringify(arr[index]["name"]).replace(/"/g,'')+'</h2><div class="test" id="right"><p>'+JSON.stringify(arr[index]["mac"]).replace(/"/g,'')+'</p></div></div><div id="white"><span>'+JSON.stringify(arr[index]["temp"]).replace(/"/g,'')+'</span><h1>°C</h1></div></div>';
   }
-  /*
-  var out = '';
-  for(var i = 0; i < arr.length; i++){
-    if(arr[i]["temp"] >= 20){
-      out = out+'<div class="boxT hot">';
-    }else if(arr[i]["temp"] < 20){
-      out = out+'<div class="boxT cold">';
-    }
-    out = out+'<div class="TNM"><div class="test"><p>'+JSON.stringify(arr[i]["timestamp"]).replace(/"/g,'').replace(/T/g,' ').replace(/Z/g,'').slice(0, -4)+'</p></div><h2>'+JSON.stringify(arr[i]["name"]).replace(/"/g,'')+'</h2><div class="test" id="right"><p>'+JSON.stringify(arr[i]["mac"]).replace(/"/g,'')+'</p></div></div><div><span>'+JSON.stringify(arr[i]["temp"]).replace(/"/g,'')+'</span><h1>°C</h1></div></div>';
-  }
-  */
   document.getElementById("boxA").innerHTML = out;
 }
