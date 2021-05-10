@@ -4,7 +4,6 @@ const fs = require('fs');
 const { timeEnd } = require('console');
 var saveFile = './public/data/data_temp.json'
 let db_info_file = fs.readFileSync('./pg_info.json');
-//log.info(db_info);
 
 var db_info=JSON.parse(db_info_file);
 /*const db_info = {
