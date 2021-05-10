@@ -50,6 +50,7 @@ services:
       - PREST_PG_DATABASE={pg_db}
       - PREST_PG_PORT={pg_port}
       - PREST_JWT_DEFAULT=false # remove if need jwt
+      - PREST_SSL_MODE=disable
     depends_on:
       - postgres
     ports:
